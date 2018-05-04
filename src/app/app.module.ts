@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { simpleReducer } from './reduce/simple.reducer';
 import { postReducer } from './reduce/post.reducer';
 import { FormsModule } from '@angular/forms';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,9 @@ import { FormsModule } from '@angular/forms';
     StoreModule.forRoot({
       message: simpleReducer,
       post: postReducer
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 10
     })
   ],
   providers: [],
