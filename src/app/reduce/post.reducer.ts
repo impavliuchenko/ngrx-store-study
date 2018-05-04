@@ -12,7 +12,7 @@ const newState = (state, newData) => {
   return Object.assign({}, state, newData);
 };
 
-export function postReducer(state: Post = defaultState, action: any) {
+export function postReducer(state: Post = defaultState, action: Action) {
   console.log(action.type, state);
 
   switch (action.type) {
