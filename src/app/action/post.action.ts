@@ -1,13 +1,12 @@
 import { Action } from '@ngrx/store';
 
 export const EDIT_TEXT = '[Post] Edit';
-export const UPVOTE = '[Post] Edit';
-export const DOWNVOTE = '[Post] Edit';
-export const RESET = '[Post] Edit';
+export const UPVOTE = '[Post] Upvote';
+export const DOWNVOTE = '[Post] Downvote';
+export const RESET = '[Post] Reset';
 
 export class EditText implements Action {
   readonly type = EDIT_TEXT;
-
   constructor(public payload: string) {
   }
 }
@@ -25,7 +24,7 @@ export class Reset implements Action {
 }
 
 export type All
-  = Upvote
+  = EditText
+  | Upvote
   | Downvote
-  | Reset
-  | EditText;
+  | Reset;

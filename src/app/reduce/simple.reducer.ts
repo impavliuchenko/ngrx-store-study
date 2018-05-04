@@ -1,7 +1,8 @@
 import { Action } from '@ngrx/store';
+import { State } from '../model/simple-state.model';
 
-export function simpleReducer(state: string = '', action: Action) {
-  console.log(action.type, state);
+export function simpleReducer(state: State = {message: 'yo', status: false}, action: Action): State {
+  console.log(action, state);
   switch (action.type) {
     case 'SPANISH':
       return {

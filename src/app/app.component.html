@@ -1,11 +1,11 @@
-{{(message$ | async).status}}
+{{(message$ | async).message}}
 
 <button (click)="spanishMessage()">Spanish</button>
 <button (click)="frenchMessage()">French</button>
 
 <hr>
 
-<div *ngIf="post | async as p">
+<div *ngIf="post$ | async as p">
   <h2>{{p.text}}</h2>
   <h4>Votes: {{p.likes}}</h4>
 

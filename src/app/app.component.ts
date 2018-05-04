@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { State } from './model/state.model';
+import { State } from './model/simple-state.model';
 import { Post } from './model/post.model';
 import { PostState } from './model/post-state.model';
 import * as PostActions from './action/post.action';
@@ -41,5 +41,13 @@ export class AppComponent implements OnInit {
 
   resetPost() {
     this.store.dispatch(new PostActions.Reset());
+  }
+
+  upvote() {
+    this.store.dispatch(new PostActions.Upvote());
+  }
+
+  downvote() {
+    this.store.dispatch(new PostActions.Downvote());
   }
 }
